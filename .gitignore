@@ -33,8 +33,17 @@
 
 # cocos2d source code
 cocos2d/
-# proj.android
+# cocos2d-x project template
 proj.android/
 proj.ios_mac/
 proj.linux/
 proj.win32/
+# cocos2d-x project build
+mac-build/
+ios-build/
+android-build/
+# cocos2d-x project debug
+bin/
+
+# .DS_Store file (on macOS)
+.DS_Store
