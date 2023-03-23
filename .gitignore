@@ -47,3 +47,6 @@ bin/
 
 # .DS_Store file (on macOS)
 .DS_Store
+
+# Visual Studio Code config
+.vscode/
