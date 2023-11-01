@@ -31,7 +31,7 @@ project(${APP_NAME})
 
 if(XCODE)
     if(NOT DEFINED CMAKE_XCODE_ATTRIBUTE_IPHONEOS_DEPLOYMENT_TARGET)
-        SET (CMAKE_XCODE_ATTRIBUTE_IPHONEOS_DEPLOYMENT_TARGET 8.0)
+        SET (CMAKE_XCODE_ATTRIBUTE_IPHONEOS_DEPLOYMENT_TARGET 12.0)
     endif()
 endif()
 
@@ -58,10 +58,62 @@ endif()
 list(APPEND GAME_SOURCE
      Classes/AppDelegate.cpp
      Classes/HelloWorldScene.cpp
+     Classes/Actions/ActionsDemoScene.cpp
+     Classes/Actions/AnimateDemoScene.cpp
+     Classes/ScenesDemo/FirstScene.cpp
+     Classes/ScenesDemo/SecondScene.cpp
+     Classes/UIComponents/LabelDemoScene.cpp
+     Classes/UIComponents/MenuDemoScene.cpp
+     Classes/UIComponents/WidgetUiDemoScene.cpp
+     Classes/TileMaps/TileMapDemoScene.cpp
+     Classes/TileMaps/GameInfoLayer.cpp
+     Classes/ParticleSystem/BuiltInParticleDemo.cpp
+     Classes/ParticleSystem/EffekseerDemo/EffekseerDemoScene.cpp
+     Classes/SpaceGame/SpaceGameScene.cpp
+     Classes/SpaceGame/ParallaxNodeExtras.cpp
+     Classes/SpaceGame/InfiniteParallaxNode.cpp
+     Classes/RunningGame/Player.cpp
+     Classes/RunningGame/RunningGame.cpp
+     Classes/EventDispatch/EventDispatchDemoScene.cpp
+     Classes/PhysicEngine/PhysicEngineDemoScene.cpp
+     Classes/AudioEngine/AudioEngineDemoScene.cpp
+     Classes/ParallaxDemo/ParallaxDemoScene.cpp
+     Classes/WorkingWithData/FileUtilsDemo.cpp
+     Classes/WorkingWithData/LeaderBoardWithSqlite.cpp
+     Classes/WorkingWithData/sqlite3/sqlite3.c
+     Classes/WorkingWithData/ParseJsonDemo.cpp
+     Classes/Joystick/Joystick.cpp
+     Classes/Joystick/JoystickSceneDemo.cpp
      )
 list(APPEND GAME_HEADER
      Classes/AppDelegate.h
      Classes/HelloWorldScene.h
+     Classes/Actions/ActionsDemoScene.h
+     Classes/Actions/AnimateDemoScene.h
+     Classes/ScenesDemo/FirstScene.h
+     Classes/ScenesDemo/SecondScene.h
+     Classes/UIComponents/LabelDemoScene.h
+     Classes/UIComponents/MenuDemoScene.h
+     Classes/UIComponents/WidgetUiDemoScene.h
+     Classes/TileMaps/TileMapDemoScene.h
+     Classes/TileMaps/GameInfoLayer.h
+     Classes/ParticleSystem/BuiltInParticleDemo.h
+     Classes/ParticleSystem/EffekseerDemo/EffekseerDemoScene.h
+     Classes/SpaceGame/SpaceGameScene.h
+     Classes/SpaceGame/ParallaxNodeExtras.h
+     Classes/SpaceGame/InfiniteParallaxNode.h
+     Classes/RunningGame/Player.h
+     Classes/RunningGame/RunningGame.h
+     Classes/EventDispatch/EventDispatchDemoScene.h
+     Classes/PhysicEngine/PhysicEngineDemoScene.h
+     Classes/AudioEngine/AudioEngineDemoScene.h
+     Classes/ParallaxDemo/ParallaxDemoScene.h
+     Classes/WorkingWithData/FileUtilsDemo.h
+     Classes/WorkingWithData/LeaderBoardWithSqlite.h
+     Classes/WorkingWithData/sqlite3/sqlite3.h
+     Classes/WorkingWithData/ParseJsonDemo.h
+     Classes/Joystick/Joystick.h
+     Classes/Joystick/JoystickSceneDemo.h
      )
 
 if(ANDROID)
@@ -143,6 +195,8 @@ if(APPLE)
     if(MACOSX)
         set_xcode_property(${APP_NAME} INFOPLIST_FILE "${CMAKE_CURRENT_SOURCE_DIR}/proj.ios_mac/mac/Info.plist")
     elseif(IOS)
+        # set_xcode_property(${APP_NAME} CMAKE_XCODE_ATTRIBUTE_IPHONEOS_DEPLOYMENT_TARGET "12.0")
+        set_xcode_property(${APP_NAME} OTHER "$(ARCHS_STANDARD_32_BIT)")
         set_xcode_property(${APP_NAME} INFOPLIST_FILE "${CMAKE_CURRENT_SOURCE_DIR}/proj.ios_mac/ios/Info.plist")
         set_xcode_property(${APP_NAME} ASSETCATALOG_COMPILER_APPICON_NAME "AppIcon")
     endif()

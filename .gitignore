@@ -50,3 +50,6 @@ bin/
 
 # Visual Studio Code config
 .vscode/
+
+# cmake build folder
+build/

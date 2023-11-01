@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.1.6" orientation="orthogonal" renderorder="right-down" width="32" height="24" tilewidth="32" tileheight="32" infinite="0" nextobjectid="1">
+ <tileset firstgid="1" source="tmw_desert_spacing_v116.tsx"/>
+ <layer name="Tile Layer 1" width="32" height="24">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUDBcgh4ZxqaGVvcTYRSv7qSFObTCQ9tM7DaDbO9D247KLXnGPbh++8KC1/YTig9Z2j4JRMAoGHwAAq0gEGw==
+  </data>
+ </layer>
+</map>
