@@ -186,40 +186,43 @@ bool AppDelegate::applicationDidFinishLaunching()
     log("integer is %d", i);
     // a bool and a variable
     bool b = true;
-    if (b == true)
-        log("bool is true");
-    else
-        log("bool is false");
+    log("bool is %s", b ? "true" : "false");
+    // if (b == true)
+    //     log("bool is true");
+    // else
+    //     log("bool is false");
 
-    // std::string lbdb = "LeaderBoard.db";
-    // LeaderBoardWithSqlite *leaderBoard = new LeaderBoardWithSqlite(lbdb);
-    // // log(leaderBoard->createDb(lbdb));
+    std::string lbdb = "LeaderBoard.db";
+    LeaderBoardWithSqlite *leaderBoard = new LeaderBoardWithSqlite(lbdb);
+    // log(leaderBoard->createDb(lbdb));
 
-    // std::string userName = "user2";
-    // // leaderBoard->insertLeaderBoard(userName, 10);
+    std::string userName = "user2";
+    if(!leaderBoard->insertLeaderBoard(userName, 10)){
+        log("can't insert to LeadersBoard\n");
+    }
     // playerUser u;
     // u.userName = userName;
     // u.score = 20;
     // leaderBoard->insertLeaderBoard(u);
 
-    // std::vector<playerUser> users = leaderBoard->loadLeaderBoard(5);
-    // for (playerUser u : users)
-    // {
-    //     log("%s - %d", u.userName.c_str(), u.score);
-    // }
+    std::vector<playerUser> users = leaderBoard->loadLeaderBoard(5);
+    for (playerUser u : users)
+    {
+        log("%s - %d", u.userName.c_str(), u.score);
+    }
 
-    // ParseJsonDemo *json = new ParseJsonDemo("LeaderBoard.json");
-    // playerUser us;
-    // us.userName = "sinhnx";
-    // us.score = 30;
-    // json->insertLeaderBoard(us);
-    // std::vector<playerUser> users = json->loadLeaderBoard(5);
-    // for (playerUser u : users)
-    // {
-    //     log("%s - %d", u.userName.c_str(), u.score);
-    // }
+    ParseJsonDemo *json = new ParseJsonDemo("data/LeadersBoard.json");
+    playerUser us;
+    us.userName = "sinhnx";
+    us.score = 50;
+    json->insertLeaderBoard(us);
+    std::vector<playerUser> jsonUsers = json->loadLeaderBoard(5);
+    for (playerUser u : jsonUsers)
+    {
+        log("%s - %d", u.userName.c_str(), u.score);
+    }
 
-    // json->saveToFile(users, "leadBoard.json");
+    // json->saveToFile(jsonUsers);
 
     // initialize director
     //    auto director = Director::getInstance();

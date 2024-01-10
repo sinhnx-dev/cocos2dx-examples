@@ -8,13 +8,16 @@ ParseJsonDemo::ParseJsonDemo()
 }
 ParseJsonDemo::ParseJsonDemo(std::string filePath)
 {
-  path = cocos2d::FileUtils::getInstance()->getWritablePath() + filePath;
+  // path = cocos2d::FileUtils::getInstance()->getWritablePath() + filePath;
+  path = cocos2d::FileUtils::getInstance()->fullPathForFilename(filePath);
+  // log("%s\n", cocos2d::FileUtils::getInstance()->fullPathForFilename(filePath).c_str());
 }
 
 vector<playerUser> ParseJsonDemo::loadLeaderBoard(int no)
 {
   vector<playerUser> users = vector<playerUser>();
-  std::string content = FileUtils::getInstance()->getStringFromFile(path.c_str());
+  // log("%s\n", path.c_str());
+  std::string content = cocos2d::FileUtils::getInstance()->getStringFromFile(path.c_str());
   // log("%s", content.c_str());
   jDoc.Parse(content.c_str());
   const rapidjson::Value &ranking = jDoc["ranking"];
