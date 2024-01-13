@@ -42,6 +42,7 @@
 #include "WorkingWithData/playerUser.h"
 #include "WorkingWithData/LeaderBoardWithSqlite.h"
 #include "WorkingWithData/ParseJsonDemo.h"
+#include "WorkingWithData/ParseXmlDemo.h"
 #include "Joystick/JoystickSceneDemo.h"
 using namespace std;
 // #define USE_AUDIO_ENGINE 1
@@ -222,7 +223,22 @@ bool AppDelegate::applicationDidFinishLaunching()
         log("%s - %d", u.userName.c_str(), u.score);
     }
 
-    // json->saveToFile(jsonUsers);
+    ParseXmlDemo *xml = new ParseXmlDemo("data/LeadersBoard.xml");
+    // if(xml->saveToFile(jsonUsers)){
+    //     log("save to file completed!");
+    // }else{
+    //     log("can't save to file");
+    // }
+    if(xml->insertLeaderBoard(us)){
+        log("insert completed!");
+    }else{
+        log("can't insert user");
+    }
+    std::vector<playerUser> xmlUsers = xml->loadLeaderBoard(5);
+    for (playerUser u : xmlUsers)
+    {
+        log("%s - %d", u.userName.c_str(), u.score);
+    }
 
     // initialize director
     //    auto director = Director::getInstance();

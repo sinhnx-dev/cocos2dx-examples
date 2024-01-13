@@ -25,10 +25,10 @@ vector<playerUser> ParseJsonDemo::loadLeaderBoard(int no)
   {
     for (int i = 0; i < ranking.Size(); ++i)
     {
-      if (ranking[i].HasMember("userName") && ranking[i].HasMember("scores"))
+      if (ranking[i].HasMember("user_name") && ranking[i].HasMember("scores"))
       {
         playerUser u;
-        u.userName = string(ranking[i]["userName"].GetString());
+        u.userName = string(ranking[i]["user_name"].GetString());
         u.score = ranking[i]["scores"].GetInt();
         users.push_back(u);
       }
@@ -90,7 +90,7 @@ bool ParseJsonDemo::saveToFile(std::vector<playerUser> users)
 
     rapidjson::Value uName(rapidjson::Type::kStringType);
     uName.SetString(u.userName.c_str(), strlen(u.userName.c_str()), jDoc.GetAllocator());
-    o.AddMember("userName", uName, allocator);
+    o.AddMember("user_name", uName, allocator);
 
     rapidjson::Value uScore(rapidjson::Type::kNumberType);
     uScore.SetInt(u.score);

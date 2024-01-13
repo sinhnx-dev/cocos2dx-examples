@@ -82,6 +82,7 @@ list(APPEND GAME_SOURCE
      Classes/WorkingWithData/LeaderBoardWithSqlite.cpp
      Classes/WorkingWithData/sqlite3/sqlite3.c
      Classes/WorkingWithData/ParseJsonDemo.cpp
+     Classes/WorkingWithData/ParseXmlDemo.cpp
      Classes/Joystick/Joystick.cpp
      Classes/Joystick/JoystickSceneDemo.cpp
      )
@@ -112,6 +113,7 @@ list(APPEND GAME_HEADER
      Classes/WorkingWithData/LeaderBoardWithSqlite.h
      Classes/WorkingWithData/sqlite3/sqlite3.h
      Classes/WorkingWithData/ParseJsonDemo.h
+     Classes/WorkingWithData/ParseXmlDemo.h
      Classes/Joystick/Joystick.h
      Classes/Joystick/JoystickSceneDemo.h
      )

@@ -1,5 +1,5 @@
 {"ranking": [
-    {"userName": "sinhnx1", "scores": 10},
-    {"userName": "sinhnx2", "scores": 11},
-    {"userName": "sinhnx3", "scores": 12}
+    {"user_name": "sinhnx1", "scores": 10},
+    {"user_name": "sinhnx2", "scores": 11},
+    {"user_name": "sinhnx3", "scores": 12}
 ]}
